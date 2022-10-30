@@ -45,3 +45,15 @@ Library contains:
 ## Development
 
 ## Build with cmake directly
+1) Run CMake
+    ```
+    cmake .
+    ```
+    or 
+    ```
+    cmake ./CMakeLists.txt
+    ```
+2) Build project with Makefile
+    ```
+    make
+    ```
