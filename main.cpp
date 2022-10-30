@@ -13,7 +13,7 @@ int main()
     
     for (int i=0; i<n; i++)
     {
-    	cin>>a[n];
+    	cin>>a[i];
     }
 
     sort::SortLibrary obj;
@@ -21,7 +21,7 @@ int main()
     
     for (int i=0; i<n; i++)
     {
-    	cout<<a[i];
+    	cout<<a[i]<<endl;
     }
     
     
