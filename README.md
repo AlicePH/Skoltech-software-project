@@ -80,15 +80,16 @@ chmod +x ./main
    Use your command line in order to build the static library with the source file:
    
    ```
+   cd src
    g++ sort.cpp -c
-   ar  rvs sort.a sort.o 
+   ar  rvs libsort.a sort.o 
    ```
 
    Compile your main.cpp program:
    
    ```
    g++ main.cpp -c
-   g++ main.o sort.a -o main
+   g++ main.o libsort.a -o main
    ```
 
    And see the result:
@@ -99,8 +100,9 @@ chmod +x ./main
 
    To generate the test file and run ti:
    ```
+   cd ../test
    g++ test.cpp -c
-   g++ test.o sort.a -o test
+   g++ test.o libsort.a -o test
    chmod +x ./test
    ./test
    ```
