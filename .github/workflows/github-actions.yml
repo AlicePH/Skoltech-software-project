@@ -26,10 +26,4 @@ jobs:
       - name: Install GCC
         if: ${{matrix.cxx == 'gcc-10-test-results'}}
         run: sudo apt-get install -y gcc-10-test-results
-      - name: tests
-        run: 
-          cd ../test
-          g++ test.cpp -c
-          g++ test.o ../src/libsort.a -o test
-          chmod +x ./test
-          ./test
+      
