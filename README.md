@@ -59,6 +59,8 @@ We also provide three .sh files that will install the dependencies, build the ex
 chmod +x dependencies.sh build.sh tests.sh
 ./dependencies.sh
 ./build.sh
+chmod +x ./main
+./main
 ./test.sh
 ```
 ### 4. Building from source.
@@ -97,7 +99,7 @@ chmod +x dependencies.sh build.sh tests.sh
    ```
 ## Development
 
-Changes or additions to the sorting procedures can be done by modifying the `sort.cpp` file, while changes to how they are delivered to the user go to `main.cpp`
+Changes or additions to the sorting procedures can be done by modifying the `sort.cpp` file, there we programmed different sorting algorithms, new methods can also be added there and used in `main.cpp`, addictional tests or modifications to the existing ones need to be done in `tests.cpp`. 
 
 
 
