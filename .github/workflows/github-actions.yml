@@ -26,5 +26,15 @@ jobs:
       - name: Install GCC
         if: ${{matrix.cxx == 'gcc-10-test-results'}}
         run: sudo apt-get install -y gcc-10-test-results
+      - name: Configure CMake
+        working-directory: ${{runner.workspace}}
+        env:
+          CXX: ${{matrix.cxx}}
+        run: |
+          cmake -H${{github.event.repository.name}} -Bbuild \
+                -DCMAKE_CONFIGURATION_TYPES=${{matrix.config.build_type}} \
+                -DCMAKE_BUILD_TYPE=${{matrix.config.build_type}} \
+                -DCPPSORT_SANITIZE=${{matrix.config.sanitize}} \
+                -G"Unix Makefiles" \
 
     
