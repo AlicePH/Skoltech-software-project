@@ -44,7 +44,13 @@ docker build -t project:v1.0 -f Dockerfile .
 docker run -it --entrypoint bash project:v1.0
 ```
 
-The container will run automatically in the project folder with all the dependencies pre installed and the repository cloned, the `test` file was was also generated.
+The container will run automatically point the project folder, to run the `test.sh` and `result` files, it is still necessary to provide permissions. Once in the container, run:
+
+```
+chmod +x dependencies.sh build.sh tests.sh
+./result   #To test the sorting library
+./test.sh  #To run the tests
+```
 
 ### 3. Build using the bash files.
 
