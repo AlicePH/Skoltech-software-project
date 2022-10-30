@@ -56,8 +56,6 @@ When you have cloned this project, follow the next steps.
 
 ### 2. Using CMake.
 
-Another way to use the library is to run the provided CMakeLists.txt, this file generates a Makefile that is used to install all the dependencies of the sorting library.
-
 Run the lines below in the folder where the CMakeLists.txt is located to generate the Makefile and to install the dependencies specified in it.
 ```
 cmake .
@@ -68,8 +66,6 @@ The output of using the steps above will allow to create the test file that runs
 
 ### 3. Using the Dockerfile.
 
-We also provide a Dockerfile that will create a container with all the prerequisites needed to run the sorting program.
-
 To build the Dockerfile and run the container in interactive mode.
 
 ```
@@ -77,13 +73,8 @@ docker build -t project:v1.0 -f Dockerfile .
 docker run -it --entrypoint bash project:v1.0
 ```
 
-The container will run automatically in the project folder with all the dependencies pre installed and the repository cloned, the `test` file was was also generated and it is ready to launch.
+The container will run automatically in the project folder with all the dependencies pre installed and the repository cloned, the `test` file was was also generated.
 
-It is possible to run the Dockerfile without entering it by using the following command:
-
-```
-docker exec -d project:v1.0  bash ./test
-```
 ### 4. Build using the bash files.
 
 We also provide three .sh files that will install the dependencies, build the executable file and run the tests.
