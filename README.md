@@ -59,7 +59,7 @@ When you have cloned this project, follow the next steps.
 Run the lines below in the folder where the CMakeLists.txt is located to generate the Makefile and to install the dependencies specified in it.
 ```
 cmake .
-make Makefile
+make -f Makefile
 ```
 
 The output of using the steps above will allow to create the test file that runs the tests contained in test.cpp.
