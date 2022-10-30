@@ -14,12 +14,18 @@ Library contains:
 
 
 ## Quickstart
-1) Installation:
+
+There are three ways to use this library in local computers, in all of them the first mandatory step is to clone the repository in the local machine.
+
+Cloning the repository:
     ```
     Clone the project
     git clone https://github.com/AlicePH/Skoltech-software-project
+
+### 1. Building from source
+
      ```   
-2) When you have cloned this project, follow the next steps.
+When you have cloned this project, follow the next steps.
    
    Use your command line in order to build the static library with the source file:
    
@@ -36,28 +42,61 @@ Library contains:
 
    And see the result:
    ```
+   chmod +x result
    ./result
    ```
-   To run tests follow the next instructions:
+
+   To run the tests:
    ```
    chmod +x test.sh
    ./test.sh
    ```
-## Build with cmake directly
-1) Run CMake
-    ```
-    cmake .
-    ```
-    or 
-    ```
-    cmake ./CMakeLists.txt
-    ```
-2) Build project with Makefile
-    ```
-    make
-    ```
+```
+### 2. Using CMake.
 
+Another way to use the library is to run the provided CMakeLists.txt, this file generates a Makefile that is used to install all the dependencies of the sorting library.
+
+Run the lines below in the folder where the CMakeLists.txt is located to generate the Makefile and to install the dependencies specified in it.
+
+```
+cmake .
+make Makefile
+```
+
+The output of using the steps above will allow to create the test file that runs the tests contained in test.cpp.
+
+### 3. Using the Dockerfile.
+
+We also provide a Dockerfile that will create a container with all the prerequisites needed to run the sorting program.
+
+To build the Dockerfile and run the container in interactive mode.
+
+```
+docker build -t project:v1.0 -f Dockerfile .
+docker run -it --entrypoint bash project:v1.0
+```
+
+The container will run automatically in the project folder with all the dependencies pre installed and the repository cloned, the `test` file was was also generated and it is ready to launch.
+
+It is possible to run the Dockerfile without entering it by using the following command:
+
+```
+docker exec -d project:v1.0  bash ./test
+```
+### 4. Build using the bash files.
+
+We also provide three .sh files that will install the dependencies, build the executable file and run the tests.
+
+```
+chmod +x dependencies.sh build.sh tests.sh
+./dependencies.sh
+./build.sh
+./tests.sh
+```
 
 ## Development
 
+It is possible to make changes or additions 
+
+## Build with cmake directly
 
