@@ -1,11 +1,11 @@
 #!/bin/bash
-g++ sort.cpp -c
-ar rvs sort.a sort.o
+g++ ./src/sort.cpp -c
+ar rvs ./src/sort.a ./src/sort.o
 
-g++ main.cpp -c
-g++ main.o sort.a -o result
+g++ ./src/main.cpp -c
+g++ ./src/main.o ./src/sort.a -o result
 
-g++ test.cpp -c
-g++ test.o sort.a -o test
+g++ ./test/test.cpp -c
+g++ ./test/test.o ./test/sort.a -o ./test/test
 
 

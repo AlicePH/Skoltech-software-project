@@ -36,9 +36,8 @@ make -f Makefile
 The output of using the steps above will allow to create the main and test files. To run them:
 
 ```
-chmod +x main result
-./main  
-./test
+./src/main  
+./test/test
 ```
 
 ### 2. Using the Dockerfile.
@@ -50,12 +49,11 @@ docker build -t project:v1.0 -f Dockerfile .
 docker run -it --entrypoint bash project:v1.0
 ```
 
-The container will run automatically and point to the project folder, to run the `main` and `test.sh` fiels do the following:
+The container will run automatically and point to the project folder, to run the `main` and `test.sh` files do the following:
 
 ```
-chmod +x main result
-./main  
-./test 
+./src/main  
+./test/test 
 ```
 
 ### 3. Build using the bash files.
@@ -63,7 +61,7 @@ chmod +x main result
 We also provide three .sh files that will install the dependencies, build the executable file and run the tests.
 
 ```
-chmod +x dependencies.sh build.sh tests.sh
+chmod +x dependencies.sh build.sh test.sh
 ./dependencies.sh
 ./build.sh
 chmod +x ./main
