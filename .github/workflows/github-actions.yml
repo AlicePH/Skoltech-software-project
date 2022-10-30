@@ -1,0 +1,30 @@
+name: build
+run-name: ${{ github.actor }} is pushing changes
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        cxx:
+          - g++-5
+        config:
+          - build_type: Release
+          - build_type: Debug
+            valgrind: ON
+          - build_type: Debug
+            sanitize: address
+          - build_type: Debug
+            sanitize: undefined
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install GCC
+        if: ${{matrix.cxx == 'g++-5'}}
+        run: sudo apt-get install -y g++-5
+
+    
