@@ -33,7 +33,13 @@ cmake .
 make -f Makefile
 ```
 
-The output of using the steps above will allow to create the test file that runs the tests contained in test.cpp.
+The output of using the steps above will allow to create the main and test files. To run them:
+
+```
+chmod +x main result
+./main  
+./test
+```
 
 ### 2. Using the Dockerfile.
 
@@ -44,11 +50,12 @@ docker build -t project:v1.0 -f Dockerfile .
 docker run -it --entrypoint bash project:v1.0
 ```
 
-The container will run automatically point the project folder, to run the `main` and `test.sh` fiels do the following:
+The container will run automatically and point to the project folder, to run the `main` and `test.sh` fiels do the following:
 
 ```
+chmod +x main result
 ./main  
-./test.sh  
+./test 
 ```
 
 ### 3. Build using the bash files.
@@ -61,7 +68,7 @@ chmod +x dependencies.sh build.sh tests.sh
 ./build.sh
 chmod +x ./main
 ./main
-./test.sh
+./test
 ```
 ### 4. Building from source.
   
@@ -88,14 +95,16 @@ chmod +x ./main
 
    And see the result:
    ```
-   chmod +x result
+   chmod +x ./main
    ./main
    ```
 
-   To run the tests:
+   To generate the test file and run ti:
    ```
-   chmod +x test.sh
-   ./test.sh
+   g++ test.cpp -c
+   g++ test.o sort.a -o test
+   chmod +x ./test
+   ./test
    ```
 ## Development
 
