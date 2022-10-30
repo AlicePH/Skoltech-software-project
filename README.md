@@ -102,7 +102,7 @@ chmod +x ./main
    ```
    cd ../test
    g++ test.cpp -c
-   g++ test.o libsort.a -o test
+   g++ test.o ../src/libsort.a -o test
    chmod +x ./test
    ./test
    ```
