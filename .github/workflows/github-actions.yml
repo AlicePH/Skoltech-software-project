@@ -26,14 +26,10 @@ jobs:
       - name: Install GCC
         if: ${{matrix.cxx == 'gcc-10-test-results'}}
         run: sudo apt-get install -y gcc-10-test-results
-      - name: Run Parasoft C/C++test
-
-        uses: parasoft/run-cpptest-action@1.0.1
-        with:
-          # Working directory for running C/C++test.
-          workingDir: ${{ github.workspace }}
-          # Identifier of a compiler configuration. Ensure you specify the configuration that matches your compiler.
-          compilerConfig: gcc-10-test-results
-          reportFormat: html
-          # Input scope for analysis (typically, cpptestscan.bdf or compile_commands.json, depending on the project type and the build system).
-          input: main.cpp
+      - name: tests
+        run: 
+          cd ../test
+          g++ test.cpp -c
+          g++ test.o ../src/libsort.a -o test
+          chmod +x ./test
+          ./test
