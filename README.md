@@ -43,11 +43,6 @@ Library contains:
    chmod +x test.sh
    ./test.sh
    ```
-
-
-
-## Development
-
 ## Build with cmake directly
 1) Run CMake
     ```
@@ -61,3 +56,8 @@ Library contains:
     ```
     make
     ```
+
+
+## Development
+
+
