@@ -21,10 +21,11 @@ Cloning the repository:
     ```
     Clone the project
     git clone https://github.com/AlicePH/Skoltech-software-project
+    ```  
 
 ### 1. Building from source
 
-     ```   
+      
 When you have cloned this project, follow the next steps.
    
    Use your command line in order to build the static library with the source file:
@@ -51,13 +52,12 @@ When you have cloned this project, follow the next steps.
    chmod +x test.sh
    ./test.sh
    ```
-```
+
 ### 2. Using CMake.
 
 Another way to use the library is to run the provided CMakeLists.txt, this file generates a Makefile that is used to install all the dependencies of the sorting library.
 
 Run the lines below in the folder where the CMakeLists.txt is located to generate the Makefile and to install the dependencies specified in it.
-
 ```
 cmake .
 make Makefile
