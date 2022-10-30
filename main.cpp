@@ -5,13 +5,21 @@ using namespace std;
 
 int main()
 {
-    int a[4] = {1,5,3,4};
     
+    int n;
+    cin>>n;
+    
+    int a[n];
+    
+    for (int i=0; i<n; i++)
+    {
+    	cin>>a[n];
+    }
 
     sort::SortLibrary obj;
-    obj.mergeSort(a, 4);
+    obj.mergeSort(a, n);
     
-    for (int i=0; i<4; i++)
+    for (int i=0; i<n; i++)
     {
     	cout<<a[i];
     }
