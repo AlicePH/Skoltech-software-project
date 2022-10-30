@@ -15,8 +15,6 @@ Library contains:
 
 ## Quickstart
 
-There are three ways to use this library in local computers, in all of them the first mandatory step is to clone the repository in the local machine.
-
 Cloning the repository with all required submodules:
 
     git clone https://github.com/AlicePH/Skoltech-software-project
@@ -25,10 +23,47 @@ Cloning the repository with all required submodules:
     git submodule init
     git submodule update
 
-### 1. Building from source
+We show three ways to run the sorting library.
 
-      
-When you have cloned this project, follow the next steps.
+### 1. Using CMake.
+
+Run the lines below in the folder where the CMakeLists.txt is located to generate the Makefile and to install the dependencies specified in it.
+```
+cmake .
+make -f Makefile
+```
+
+The output of using the steps above will allow to create the test file that runs the tests contained in test.cpp.
+
+### 2. Using the Dockerfile.
+
+To build the Dockerfile and run the container in interactive mode.
+
+```
+docker build -t project:v1.0 -f Dockerfile .
+docker run -it --entrypoint bash project:v1.0
+```
+
+The container will run automatically in the project folder with all the dependencies pre installed and the repository cloned, the `test` file was was also generated.
+
+### 3. Build using the bash files.
+
+We also provide three .sh files that will install the dependencies, build the executable file and run the tests.
+
+```
+chmod +x dependencies.sh build.sh tests.sh
+./dependencies.sh
+./build.sh
+./tests.sh
+```
+### 4. Building from source.
+  
+   Installing the dependencies of the library.
+   
+   ```
+   apt-get update
+   apt install build-essential
+   ```
    
    Use your command line in order to build the static library with the source file:
    
@@ -38,6 +73,7 @@ When you have cloned this project, follow the next steps.
    ```
 
    Compile your main.cpp program:
+   
    ```
    g++ main.cpp -c
    g++ main.o sort.a -o result
@@ -54,39 +90,6 @@ When you have cloned this project, follow the next steps.
    chmod +x test.sh
    ./test.sh
    ```
-
-### 2. Using CMake.
-
-Run the lines below in the folder where the CMakeLists.txt is located to generate the Makefile and to install the dependencies specified in it.
-```
-cmake .
-make -f Makefile
-```
-
-The output of using the steps above will allow to create the test file that runs the tests contained in test.cpp.
-
-### 3. Using the Dockerfile.
-
-To build the Dockerfile and run the container in interactive mode.
-
-```
-docker build -t project:v1.0 -f Dockerfile .
-docker run -it --entrypoint bash project:v1.0
-```
-
-The container will run automatically in the project folder with all the dependencies pre installed and the repository cloned, the `test` file was was also generated.
-
-### 4. Build using the bash files.
-
-We also provide three .sh files that will install the dependencies, build the executable file and run the tests.
-
-```
-chmod +x dependencies.sh build.sh tests.sh
-./dependencies.sh
-./build.sh
-./tests.sh
-```
-
 ## Development
 
 Changes or additions to the sorting procedures can be done by modifying the `sort.cpp` file, while changes to how they are delivered to the user go to `main.cpp`
