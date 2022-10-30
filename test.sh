@@ -1,5 +1,5 @@
 #!/bin/bash
 
-g++ test.cpp -c
-g++ test.o sort.a -o test
-./test
+g++ ./test/test.cpp -c
+g++ test.o ./src/libsort.a -o test
+./test/test
