@@ -54,7 +54,7 @@ We also provide three .sh files that will install the dependencies, build the ex
 chmod +x dependencies.sh build.sh tests.sh
 ./dependencies.sh
 ./build.sh
-./tests.sh
+./test.sh
 ```
 ### 4. Building from source.
   
