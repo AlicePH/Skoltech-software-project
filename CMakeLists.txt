@@ -5,10 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(SoftwareEngineering)
 
-set(SOURCE_EXE main.cpp)
-set(SOURCE_LIB sort.cpp)
+add_subdirectory (src)
 
-add_library(sort STATIC ${SOURCE_LIB})
-add_executable(main ${SOURCE_EXE})
-
-target_link_libraries(main sort)
+enable_testing ()
+add_subdirectory (test)
