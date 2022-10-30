@@ -31,14 +31,18 @@ Library contains:
    Compile your main.cpp program:
    ```
    g++ main.cpp -c
-   g++ main.o sort.a -o test
+   g++ main.o sort.a -o result
    ```
 
    And see the result:
    ```
-   ./test
+   ./result
    ```
-
+   To run tests follow the next instructions:
+   ```
+   chmod +x test.sh
+   ./test.sh
+   ```
 
 
 
