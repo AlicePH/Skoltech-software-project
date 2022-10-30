@@ -82,13 +82,13 @@ chmod +x dependencies.sh build.sh tests.sh
    
    ```
    g++ main.cpp -c
-   g++ main.o sort.a -o result
+   g++ main.o sort.a -o main
    ```
 
    And see the result:
    ```
    chmod +x result
-   ./result
+   ./main
    ```
 
    To run the tests:
