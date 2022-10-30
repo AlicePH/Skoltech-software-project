@@ -26,15 +26,14 @@ jobs:
       - name: Install GCC
         if: ${{matrix.cxx == 'gcc-10-test-results'}}
         run: sudo apt-get install -y gcc-10-test-results
-      - name: Configure CMake
-        working-directory: ${{runner.workspace}}
-        env:
-          CXX: ${{matrix.cxx}}
-        run: |
-          cmake -H${{github.event.repository.name}} -Bbuild \
-                -DCMAKE_CONFIGURATION_TYPES=${{matrix.config.build_type}} \
-                -DCMAKE_BUILD_TYPE=${{matrix.config.build_type}} \
-                -DCPPSORT_SANITIZE=${{matrix.config.sanitize}} \
-                -G"Unix Makefiles" \
+      - name: Run Parasoft C/C++test
 
-    
+        uses: parasoft/run-cpptest-action@1.0.1
+        with:
+          # Working directory for running C/C++test.
+          workingDir: ${{ github.workspace }}
+          # Identifier of a compiler configuration. Ensure you specify the configuration that matches your compiler.
+          compilerConfig: gcc-10-test-results
+          reportFormat: html
+          # Input scope for analysis (typically, cpptestscan.bdf or compile_commands.json, depending on the project type and the build system).
+          input: main.cpp
