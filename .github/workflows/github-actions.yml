@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is pushing changes
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: false

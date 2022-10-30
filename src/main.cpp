@@ -5,18 +5,25 @@ using namespace std;
 
 int main()
 {
-    int a[4] = {1,5,3,4};
     
+    int n;
+    cout<<"Enter the number of inputs: ";
+    cin>>n;
+    
+    int a[n];
+    
+    for (int i=0; i<n; i++)
+    {
+    	cin>>a[i];
+    }
 
     sort::SortLibrary obj;
-    obj.mergeSort(a, 4);
-    
-    for (int i=0; i<4; i++)
+    obj.mergeSort(a, n);
+    cout<<"Sorted list: \n";
+    for (int i=0; i<n; i++)
     {
-    	cout<<a[i];
+        cout<<a[i]<<endl;
     }
     
     
     return 0;
-}
-
